@@ -20,4 +20,5 @@
 ---
 
 include:
-  - board: polilla
+  - board: nice_nano
+  - shield: polilla
