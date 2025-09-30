@@ -20,19 +20,20 @@
         compatible = "zmk,keymap";
 
         default_layer {
-// ,-----------------------------------,              ,-----------------------------------,
-// |  =  |  1  |  2  |  3  |  4  |  5  |              |  6  |  7  |  8  |  9  |  0  |  -  |
-// |  [  |  Q  |  W  |  E  |  R  |  T  |              |  Y  |  U  |  I  |  O  |  P  |  ]  |
-// | TAB |  A  |  S  |  D  |  F  |  G  |-----,  ,-----|  H  |  J  |  K  |  L  |  ;  |  '  |
-// | SFT |  Z  |  X  |  C  |  V  |  B  |GESC |  |  \  |  N  |  M  |  ,  |  .  |  /  | SFT |
-// '-----------|  LA | GUI |LOWER| BSP | CTL |  | RA* | RA_ |UPPER| GUI | BLE |-----------'
-//             '-----------------------------'  '-----------------------------'
+// ,-----------------------------------,                  ,-----------------------------------,
+// | ESC |  1  |  2  |  3  |  4  |  5  |                  |  6  |  7  |  8  |  9  |  0  |  -  |
+// | TAB |  Q  |  W  |  E  |  R  |  T  |                  |  Y  |  U  |  I  |  O  |  P  |  ]  |
+// | LCTL|  A  |  S  |  D  |  F  |  G  |-------,  ,-------|  H  |  J  |  K  |  L  |  ;  |  '  |
+// | SCSH|  Z  |  X  |  C  |  V  |  B  | LOWER |  |UPPER  |  N  |  M  |  ,  |  .  |  /  | SCSH|
+// '-----------|  LA | LEFT|  UP | SPC |LC(RET)|  |LC(RET)| SPC |DOWN |RIGHT| BLE |-----------'
+//             '-------------------------------'  '-------------------------------'
             bindings = <
-&kp EQUAL   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5                              &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS
-&kp LBKT    &kp Q       &kp W       &kp E       &kp R       &kp T                               &kp Y       &kp U       &kp I       &kp O       &kp P       &kp RBKT
-&kp TAB     &kp A       &kp S       &kp D       &kp F       &kp G                               &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT
-&kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B       &gresc     	&kp BSLH 	&kp N   	&kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
-                        &kp LALT    &kp LGUI    &mo LOWER   &kp BSPC    &kp LCTL    &mt RALT RET &kp SPACE  &mo UPPER &kp RGUI  	&mo BLE
+				&mt LSHIFT RET
+&kp ESC     &kp N1      &kp N2      &kp N3      &kp N4      &kp N5                              &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS
+&kp TAB     &kp Q       &kp W       &kp E       &kp R       &kp T                               &kp Y       &kp U       &kp I       &kp O       &kp P       &kp RBKT
+&kp LCTRL   &kp A       &kp S       &kp D       &kp F       &kp G                               &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT
+&mt         &kp Z       &kp X       &kp C       &kp V       &kp B       &mo LOWER   &mo UPPER	&kp N   	   &kp M       &kp COMMA   &kp DOT     &kp FSLH       &mt
+                        &kp LALT    &kp LEFT    &mo UP      &kp SPACE   &kp LC(RET) &kp LC(RET) &kp SPACE   &mo DOWN    &kp RIGHT  	&mo BLE
             >;
         };
 
@@ -41,15 +42,15 @@
 // | --- | F1  | F2  | F3  | F4  | F5  |              |  F6 |  F7 |  F8 |  F9 | F10 | F11 |
 // | --- | --- | --- | --- | --- | --- |              | --- |  7  |  8  |  9  | --- | F12 |
 // |S-TAB| --- |PRETB| DEL |NXTTB| --- |-----,  ,-----|  +  |  4  |  5  |  6  |  *  | --- |
-// |  T  | --- | --- | --- | --- | --- | --- |  |KPENT|  -  |  1  |  2  |  3  |  /  |  T  |
-// '-----------| --- | --- |  T  | --- | --- |  | --- |  0  | --- | --- | NLK |-----------'
+// |  T  | --- | --- | --- | --- | --- |  T  |  |KPENT|  -  |  1  |  2  |  3  |  /  |  T  |
+// '-----------| --- | --- | --- | --- | --- |  | --- |  0  | --- | --- | NLK |-----------'
 //             '-----------------------------'  '-----------------------------'
             bindings = <
 &none		&kp F1     	&kp F2      &kp F3      &kp F4      &kp F5                              &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &kp F11
 &none		&none 		&none 		&none 	 	&none 		&none                   			&none       &kp KP_N7   &kp KP_N8   &kp KP_N9   &none       &kp F12
 &kp LS(TAB) &none       &kp LC(PG_UP) &kp DEL   &kp LC(PG_DN) &none                           	&kp KP_PLUS &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_MULTIPLY &none
-&trans   	&none       &none       &none       &none       &none       &none 		&kp KP_ENTER &kp KP_MINUS &kp KP_N1 &kp KP_N2   &kp KP_N3  	&kp KP_DIVIDE &trans
-                        &none  		&none  		&trans      &none      	&none      	&none       &kp KP_N0   &none     	&none       &kp KP_NLCK
+&trans   	&none       &none       &none       &none      &none       &trans 		&kp KP_ENTER &kp KP_MINUS &kp KP_N1 &kp KP_N2   &kp KP_N3  	&kp KP_DIVIDE &trans
+                        &none  		&none  		&none      &none      	&none      	&none       &kp KP_N0   &none     	&none       &kp KP_NLCK
             >;
         };
 
