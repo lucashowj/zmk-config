@@ -1,0 +1,16 @@
+# Polilla board configuration
+
+# Copyright (c) 2020 elagil
+# SPDX-License-Identifier: MIT
+
+file_format: "1"
+id: polilla
+name: Polilla
+type: board
+arch: arm
+features:
+  - keys
+outputs:
+  - usb
+  - ble
+url: https://github.com/elagil/polilla
