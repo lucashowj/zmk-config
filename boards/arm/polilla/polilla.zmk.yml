@@ -1,8 +1,3 @@
-# Polilla board configuration
-
-# Copyright (c) 2020 elagil
-# SPDX-License-Identifier: MIT
-
 file_format: "1"
 id: polilla
 name: Polilla
